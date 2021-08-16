@@ -175,6 +175,23 @@ def GenCh1(f, val):
     A = np.array(img)
     return A
 
+# green
+def GenCh_green(f, val):
+    img = Image.new("RGB", (45, 70), (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    draw.text((0, 3), val, (0, 0, 0), font=f)
+    img = img.resize((23, 70))
+    A = np.array(img)
+    return A
+
+
+def GenCh1_green(f, val):
+    img = Image.new("RGB", (23, 70), (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    # draw.text((0, 2), val.decode('utf-8'), (0, 0, 0), font=f)
+    draw.text((0, 2), val, (0, 0, 0), font=f)
+    A = np.array(img)
+    return A
 
 def AddGauss(img, level):
     return cv2.blur(img, (level * 2 + 1, level * 2 + 1))
